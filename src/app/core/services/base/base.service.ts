@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { delay, retryWhen, scan } from 'rxjs/operators';
 
 @Injectable({
@@ -16,9 +16,7 @@ export class BaseService {
   }
 
   _get<T>(uri: string) {
-    return this._pipe(
-      this.http.get<T>(`${this.url}${uri}`)
-    );
+    return this._pipe(this.http.get<T>(`${this.url}${uri}`));
   }
 
   _patch<T>(uri: string, model: any) {
@@ -44,7 +42,6 @@ export class BaseService {
       })
     );
   }
-
 
   _pipe<T>(obs: Observable<T>) {
     return obs.pipe(
