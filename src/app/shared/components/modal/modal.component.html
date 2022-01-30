@@ -1,0 +1,31 @@
+<div class="modal-backdrop-introdution">
+  <div id="modal-form-introdution">
+    <section>
+      <h6>{{ title }}</h6>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="close()"
+      ></button>
+    </section>
+
+    <section>
+      <ul class="list-group">
+        <li
+          *ngFor="let intinerario of listPosition; let i = index"
+          class="list-group-item"
+        >
+          <a
+            target="_blank"
+            href="https://www.google.com/maps/search/{{ intinerario.lat }},{{
+              intinerario.lng
+            }}"
+          >
+            {{ i + 1 }}º Ponto de Parada
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

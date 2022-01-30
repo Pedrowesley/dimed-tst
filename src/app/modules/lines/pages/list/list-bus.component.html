@@ -1,0 +1,49 @@
+<app-header (searchEmmiter)="setInputSearch($event)"></app-header>
+
+<ng-container
+  *ngIf="loading$ | async; then loadingTemplate; else dataTemplate"
+></ng-container>
+
+<ng-template #loadingTemplate>
+  <app-message-loading></app-message-loading>
+</ng-template>
+
+<ng-template #dataTemplate>
+  <table
+    *ngIf="list$ | async as list"
+    class="table fade-in"
+    style="max-width: 950px; margin: 0 auto"
+  >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Itinerário</th>
+        <th scope="col">ID</th>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list | myfilter: inputSearch">
+        <th scope="col">
+          <button
+            type="button"
+            class="btn btn-info text-white"
+            (click)="getItinerarios(item.id)"
+          >
+            Consultar
+          </button>
+        </th>
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.codigo }}</td>
+        <td>{{ item.nome }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<app-modal
+  *ngIf="showModal"
+  (actionClose)="closeModal()"
+  [itinerarios]="itinerario"
+  [title]="'Itinerários'"
+></app-modal>

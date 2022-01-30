@@ -1,0 +1,32 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-center"
+      id="navbarSupportedContent"
+    >
+      <form class="form-inline my-2 my-lg-0 d-flex justify-content-between">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Buscar"
+          name="search"
+          [(ngModel)]="inputSearch"
+          (ngModelChange)="search(inputSearch)"
+          autocomplete="off"
+        />
+        <select
+          [(ngModel)]="filter"
+          (change)="alterFilter()"
+          name="filter"
+          class="form-select ms-2"
+          aria-label="Default select example"
+        >
+          <option *ngFor="let item of optionsFilter">
+            {{ item }}
+          </option>
+        </select>
+      </form>
+    </div>
+  </nav>
+</header>

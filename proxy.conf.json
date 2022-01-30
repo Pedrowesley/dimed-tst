@@ -1,0 +1,10 @@
+{
+    "/api": {
+        "target": "http://www.poatransporte.com.br",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": "http://localhost:4200/api"
+        }
+    }
+}
