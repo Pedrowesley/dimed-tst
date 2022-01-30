@@ -1,7 +1,5 @@
 # Dimed Teste
 
-A Front-end clone of Trello with the Angular.
-
 ## Description
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
@@ -10,7 +8,7 @@ consultation of bus lines and stocking lines.
 
 Main App
 :-------------------------:
-![](https://github.com/Pedrowesley/Trello-clone-Angular/blob/main/src/assets/screenshots/main.PNG "Main")
+![](https://github.com/Pedrowesley/dimed-tst/blob/main/src/assets/screenshot-system.png "Main")
 
 ## Install packages
 
